@@ -3,6 +3,7 @@ package com.event.handler.model.edi.invoice;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 @Data
