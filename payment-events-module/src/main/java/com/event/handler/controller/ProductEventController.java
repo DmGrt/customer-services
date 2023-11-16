@@ -1,9 +1,11 @@
 package com.event.handler.controller;
 
+import com.event.handler.kafka.EventProducer;
 import com.event.handler.model.ProductEvent;
 import com.event.handler.service.ProductEventService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.apache.kafka.clients.producer.KafkaProducer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductEventController {
 
   private final ProductEventService productEventService;
+  private final EventProducer eventProducer;
 
   @GetMapping
   public ResponseEntity<List<ProductEvent>> getAllProductEvents() {
@@ -55,5 +58,13 @@ public class ProductEventController {
   public ResponseEntity<Void> deleteProductEvent(@PathVariable Long id) {
     productEventService.deleteProductEvent(id);
     return ResponseEntity.noContent().build();
+  }
+
+  @GetMapping("/initiate")
+  public void initiate() {
+    for (int i = 0; i < 20; i++) {
+      eventProducer.sendEdi();
+      eventProducer.sendInvoice();
+    }
   }
 }
