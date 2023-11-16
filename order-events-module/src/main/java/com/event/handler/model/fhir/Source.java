@@ -1,13 +1,15 @@
 package com.event.handler.model.fhir;
 
 import java.util.ArrayList;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class Source {
   public Observer observer;
   public ArrayList<Type> type;

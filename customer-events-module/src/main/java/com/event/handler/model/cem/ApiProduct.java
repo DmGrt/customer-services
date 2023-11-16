@@ -1,13 +1,15 @@
 package com.event.handler.model.cem;
 
 import java.util.ArrayList;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class ApiProduct {
   public String label;
   public String type;

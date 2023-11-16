@@ -1,13 +1,15 @@
 package com.event.handler.model.edi.invoice;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class LIN03 {
   @JsonProperty("LIN_03_01")
   public String lIN_03_01;

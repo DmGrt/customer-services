@@ -1,13 +1,15 @@
 package com.event.handler.model.edi.invoice;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class UNH02MessageIdentifier {
   @JsonProperty("UNH_02_01_MessageType")
   public String uNH_02_01_MessageType;

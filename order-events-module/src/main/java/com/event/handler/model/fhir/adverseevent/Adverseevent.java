@@ -2,13 +2,15 @@ package com.event.handler.model.fhir.adverseevent;
 
 import java.util.ArrayList;
 import java.util.Date;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class Adverseevent {
   public String resourceType;
   public String id;
