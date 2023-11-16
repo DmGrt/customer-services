@@ -7,7 +7,7 @@ import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 @Configuration
-public class ProductEventsConfig {
+public class OrderEventsConfig {
   @Bean
   public PodamFactory podamFactory() {
     return new PodamFactoryImpl();
