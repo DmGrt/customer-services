@@ -18,7 +18,7 @@ import uk.co.jemos.podam.api.PodamFactory;
 @RequiredArgsConstructor
 public class EventProducer {
 
-  private static final String TOPIC = "event-handler-1";
+  private static final String TOPIC = "eventHandler1";
 
   private final KafkaTemplate<String, String> kafkaTemplate;
   private final PodamFactory podam;
