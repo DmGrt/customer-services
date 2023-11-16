@@ -21,47 +21,47 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/order-events")
 public class OrderEventController {
 
-    private final OrderEventService orderEventService;
-    private final EventProducer eventProducer;
+  private final OrderEventService orderEventService;
+  private final EventProducer eventProducer;
 
-    @GetMapping
-    public ResponseEntity<List<OrderEvent>> getAllOrderEvents() {
-        List<OrderEvent> orderEvents = orderEventService.getAllOrderEvents();
-        return ResponseEntity.ok(orderEvents);
-    }
+  @GetMapping
+  public ResponseEntity<List<OrderEvent>> getAllOrderEvents() {
+    List<OrderEvent> orderEvents = orderEventService.getAllOrderEvents();
+    return ResponseEntity.ok(orderEvents);
+  }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<OrderEvent> getOrderEventById(@PathVariable Long id) {
-        OrderEvent orderEvent = orderEventService.getOrderEventById(id);
-        return orderEvent != null ?
-                ResponseEntity.ok(orderEvent) :
-                ResponseEntity.notFound().build();
-    }
+  @GetMapping("/{id}")
+  public ResponseEntity<OrderEvent> getOrderEventById(@PathVariable Long id) {
+    OrderEvent orderEvent = orderEventService.getOrderEventById(id);
+    return orderEvent != null ? ResponseEntity.ok(orderEvent) : ResponseEntity.notFound().build();
+  }
 
-    @PostMapping
-    public ResponseEntity<OrderEvent> createOrderEvent(@RequestBody OrderEvent orderEvent) {
-        OrderEvent createdOrderEvent = orderEventService.createOrderEvent(orderEvent);
-        return new ResponseEntity<>(createdOrderEvent, HttpStatus.CREATED);
-    }
+  @PostMapping
+  public ResponseEntity<OrderEvent> createOrderEvent(@RequestBody OrderEvent orderEvent) {
+    OrderEvent createdOrderEvent = orderEventService.createOrderEvent(orderEvent);
+    return new ResponseEntity<>(createdOrderEvent, HttpStatus.CREATED);
+  }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<OrderEvent> updateOrderEvent(@PathVariable Long id, @RequestBody OrderEvent orderEvent) {
-        OrderEvent updatedOrderEvent = orderEventService.updateOrderEvent(id, orderEvent);
-        return updatedOrderEvent != null ?
-                ResponseEntity.ok(updatedOrderEvent) :
-                ResponseEntity.notFound().build();
-    }
+  @PutMapping("/{id}")
+  public ResponseEntity<OrderEvent> updateOrderEvent(
+      @PathVariable Long id, @RequestBody OrderEvent orderEvent) {
+    OrderEvent updatedOrderEvent = orderEventService.updateOrderEvent(id, orderEvent);
+    return updatedOrderEvent != null
+        ? ResponseEntity.ok(updatedOrderEvent)
+        : ResponseEntity.notFound().build();
+  }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrderEvent(@PathVariable Long id) {
-        orderEventService.deleteOrderEvent(id);
-        return ResponseEntity.noContent().build();
-    }
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteOrderEvent(@PathVariable Long id) {
+    orderEventService.deleteOrderEvent(id);
+    return ResponseEntity.noContent().build();
+  }
 
-    @GetMapping("/initiate")
-    public void initiate() {
-        for (int i = 0; i < 20; i++) {
-            eventProducer.sendFhir();
-        }
+  @GetMapping("/initiate")
+  public void initiate() {
+    for (int i = 0; i < 20; i++) {
+      eventProducer.sendFhir();
+      eventProducer.sendAdverseevent();
     }
+  }
 }

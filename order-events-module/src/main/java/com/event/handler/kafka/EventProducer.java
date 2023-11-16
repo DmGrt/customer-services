@@ -1,6 +1,7 @@
 package com.event.handler.kafka;
 
 import com.event.handler.model.fhir.FHIREvent;
+import com.event.handler.model.fhir.adverseevent.Adverseevent;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,16 @@ public class EventProducer {
     }
     String json = gson.toJson(fhirs);
     log.info(String.format("#### -> Sending FHIR order event message -> %s", json));
+    kafkaTemplate.send(TOPIC, json);
+  }
+
+  public void sendAdverseevent() {
+    List<Adverseevent> adverseevent = new ArrayList<>();
+    for (int i = 0; i <= 10; i++) {
+      adverseevent.add(podam.manufacturePojo(Adverseevent.class));
+    }
+    String json = gson.toJson(adverseevent);
+    log.info(String.format("#### -> Sending Adverseevent event message -> %s", json));
     kafkaTemplate.send(TOPIC, json);
   }
 
