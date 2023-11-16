@@ -6,8 +6,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@Builder 
- @RequiredArgsConstructor
+@Builder
+@RequiredArgsConstructor
 public class RFF01 {
   @JsonProperty("RFF_01_01")
   public String rFF_01_01;

@@ -1,7 +1,6 @@
 package com.event.handler.service;
 
 import com.event.handler.model.CustomerEvent;
-
 import java.util.List;
 
 public interface CustomerEventService {

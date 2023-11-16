@@ -1,10 +1,9 @@
 package com.event.handler.model.fhir;
 
+import java.util.ArrayList;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
-import java.util.ArrayList;
 
 @Data
 @Builder

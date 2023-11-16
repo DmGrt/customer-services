@@ -6,8 +6,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@Builder 
- @RequiredArgsConstructor
+@Builder
+@RequiredArgsConstructor
 public class UNB01SyntaxIdentifier {
   @JsonProperty("UNB_01_01_SyntaxIdentifier")
   public String uNB_01_01_SyntaxIdentifier;

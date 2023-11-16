@@ -1,10 +1,6 @@
 package com.event.handler.service;
 
 import com.event.handler.model.OrderEvent;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 public interface OrderEventService {

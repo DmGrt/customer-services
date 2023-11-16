@@ -1,14 +1,14 @@
 package com.event.handler.model.edi.invoice;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.util.ArrayList;
 @Data
-@Builder 
- @RequiredArgsConstructor
+@Builder
+@RequiredArgsConstructor
 public class Transaction {
   @JsonProperty("UNH_01_MessageReferenceNumber")
   public String uNH_01_MessageReferenceNumber;

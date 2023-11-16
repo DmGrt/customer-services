@@ -1,6 +1,5 @@
 package com.event.handler.model;
 
-
 import jakarta.persistence.Lob;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

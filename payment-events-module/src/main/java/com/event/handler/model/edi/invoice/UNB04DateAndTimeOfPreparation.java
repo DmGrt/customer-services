@@ -6,12 +6,12 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@Builder 
- @RequiredArgsConstructor
-public class UNB04DateAndTimeOfPreparation{
-    @JsonProperty("UNB_04_01_Date")
-    public String uNB_04_01_Date;
-    @JsonProperty("UNB_04_02_Time")
-    public String uNB_04_02_Time;
-}
+@Builder
+@RequiredArgsConstructor
+public class UNB04DateAndTimeOfPreparation {
+  @JsonProperty("UNB_04_01_Date")
+  public String uNB_04_01_Date;
 
+  @JsonProperty("UNB_04_02_Time")
+  public String uNB_04_02_Time;
+}

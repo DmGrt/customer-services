@@ -2,12 +2,11 @@ package com.event.handler.service;
 
 import com.event.handler.model.CustomerEvent;
 import com.event.handler.repository.CustomerEventRepository;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Slf4j
 @Service

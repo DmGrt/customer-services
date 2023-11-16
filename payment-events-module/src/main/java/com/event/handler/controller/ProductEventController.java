@@ -5,7 +5,6 @@ import com.event.handler.model.ProductEvent;
 import com.event.handler.service.ProductEventService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/product-events")
+@RequestMapping("/api/payment-events")
 @RequiredArgsConstructor
 public class ProductEventController {
 

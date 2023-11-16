@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.event.handler</groupId>
-        <artifactId>independent-event-handler</artifactId>
+        <artifactId>customer-services</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -20,11 +20,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.event.handler</groupId>
-            <artifactId>core-module</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>com.berryworks</groupId>
             <artifactId>edireader-json-basic</artifactId>
             <version>5.6.2</version>
@@ -32,13 +27,32 @@
         <dependency>
             <groupId>uk.co.jemos.podam</groupId>
             <artifactId>podam</artifactId>
-            <version>7.1.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.10.1</version>
         </dependency>
 
     </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.spotify.fmt</groupId>
+                <artifactId>fmt-maven-plugin</artifactId>
+                <version>2.21.1</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

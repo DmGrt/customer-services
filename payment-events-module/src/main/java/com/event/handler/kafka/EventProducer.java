@@ -1,12 +1,10 @@
 package com.event.handler.kafka;
 
+import com.event.handler.model.edi.Interchange;
+import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-
-import com.event.handler.model.edi.Interchange;
-import com.event.handler.model.edi.Root;
-import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;

@@ -6,8 +6,8 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@Builder 
- @RequiredArgsConstructor
+@Builder
+@RequiredArgsConstructor
 public class UNB03InterchangeReceiver {
   @JsonProperty("UNB_03_01_InterchangeReceiverIdentification")
   public String uNB_03_01_InterchangeReceiverIdentification;
