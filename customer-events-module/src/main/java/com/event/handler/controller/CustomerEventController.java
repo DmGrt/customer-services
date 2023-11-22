@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/order-events")
+@RequestMapping("/api/customer-events")
 public class CustomerEventController {
 
   private final CustomerEventServiceImpl customerEventService;
@@ -59,8 +59,6 @@ public class CustomerEventController {
 
   @GetMapping("/initiate")
   public void initiate() {
-    for (int i = 0; i < 20; i++) {
-      eventProducer.sendCustomerEvent();
-    }
+    eventProducer.sendCustomerEvent();
   }
 }

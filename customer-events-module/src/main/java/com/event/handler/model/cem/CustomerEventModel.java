@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CustomerEventModel {
   public String id;
-  public ArrayList<String> type;
+  public String type;
+  public ArrayList<String> actionType;
   public ArrayList<String> bankType;
   public String status;
   public String name;

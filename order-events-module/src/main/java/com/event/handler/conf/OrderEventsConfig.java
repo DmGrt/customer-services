@@ -10,7 +10,9 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 public class OrderEventsConfig {
   @Bean
   public PodamFactory podamFactory() {
-    return new PodamFactoryImpl();
+    PodamFactoryImpl podamFactory = new PodamFactoryImpl();
+    podamFactory.getStrategy().setDefaultNumberOfCollectionElements(1);
+    return podamFactory;
   }
 
   @Bean

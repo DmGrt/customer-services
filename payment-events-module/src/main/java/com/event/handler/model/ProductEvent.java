@@ -1,6 +1,5 @@
 package com.event.handler.model;
 
-import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,8 +16,7 @@ public class ProductEvent {
 
   @Id private Long productId;
   private String name;
-  @Lob private String description;
-
+  private String description;
   private String eventType;
   private String eventPayload;
   private long timestamp;

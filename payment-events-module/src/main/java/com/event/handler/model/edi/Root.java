@@ -1,6 +1,6 @@
 package com.event.handler.model.edi;
 
-import java.util.ArrayList;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,5 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Root {
-  public ArrayList<Interchange> interchanges;
+  public String type;
+  public List<Interchange> interchanges;
 }

@@ -59,9 +59,7 @@ public class OrderEventController {
 
   @GetMapping("/initiate")
   public void initiate() {
-    for (int i = 0; i < 20; i++) {
-      eventProducer.sendFhir();
-      eventProducer.sendAdverseevent();
-    }
+    eventProducer.sendFhir();
+    eventProducer.sendAdverseevent();
   }
 }

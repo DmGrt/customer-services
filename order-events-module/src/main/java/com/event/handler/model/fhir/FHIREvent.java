@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FHIREvent {
+  public String type;
   public String resourceType;
   public String id;
   public Text text;

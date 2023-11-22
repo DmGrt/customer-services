@@ -30,23 +30,26 @@ public class EventProducer {
 
   public void sendEdi() {
     List<Interchange> interchanges = new ArrayList<>();
-    for (int i = 0; i <= 10; i++) {
-      interchanges.add(podam.manufacturePojo(Interchange.class));
+    for (int i = 0; i <= 2; i++) {
+      Interchange interchange = podam.manufacturePojo(Interchange.class);
+      interchange.setType("Interchanges");
+      interchanges.add(interchange);
     }
     receiversIds = interchanges.stream().map(Interchange::getISA_08_ReceiverId).toList();
     String json = gson.toJson(interchanges);
-    log.info(String.format("#### -> Sending edi event message -> %s", json));
+    log.info("#### -> Sending edi event message ->");
     kafkaTemplate.send(TOPIC, json);
   }
 
   public void sendInvoice() {
     List<com.event.handler.model.edi.invoice.Interchange> interchanges = new ArrayList<>();
-    for (int i = 0; i <= 10; i++) {
+    for (int i = 0; i <= 2; i++) {
       com.event.handler.model.edi.invoice.Interchange interchange =
           podam.manufacturePojo(com.event.handler.model.edi.invoice.Interchange.class);
       interchange
           .getUNB_03_InterchangeReceiver()
           .setUNB_03_01_InterchangeReceiverIdentification(receiversIds.get(i));
+      interchange.setType("Interchange_Invoice");
       interchanges.add(interchange);
     }
     String json = gson.toJson(interchanges);

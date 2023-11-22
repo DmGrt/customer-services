@@ -11,7 +11,6 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 @RequiredArgsConstructor
 public class KafkaConfig {
-
   @Bean
   public NewTopic topic1() {
     return TopicBuilder.name("eventHandler1").build();

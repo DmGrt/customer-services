@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Adverseevent {
+  public String type;
   public String resourceType;
   public String id;
   public Text text;

@@ -29,11 +29,13 @@ public class EventProducer {
 
   public void sendCustomerEvent() {
     List<CustomerEventModel> customerEventModels = new ArrayList<>();
-    for (int i = 0; i <= 10; i++) {
-      customerEventModels.add(podam.manufacturePojo(CustomerEventModel.class));
+    for (int i = 0; i <= 2; i++) {
+      CustomerEventModel customerEventModel = podam.manufacturePojo(CustomerEventModel.class);
+      customerEventModel.setType("CEM");
+      customerEventModels.add(customerEventModel);
     }
     String json = gson.toJson(customerEventModels);
-    log.info(String.format("#### -> Sending Customer Events message -> %s", json));
+    log.info("#### -> Sending Customer Events message -> ");
     kafkaTemplate.send(TOPIC, json);
   }
 

@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Interchange {
+  public String type;
+
   @JsonProperty("ISA_01_AuthorizationQualifier")
   public String iSA_01_AuthorizationQualifier;
 

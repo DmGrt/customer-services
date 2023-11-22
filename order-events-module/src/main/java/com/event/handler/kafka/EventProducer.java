@@ -30,8 +30,10 @@ public class EventProducer {
 
   public void sendFhir() {
     List<FHIREvent> fhirs = new ArrayList<>();
-    for (int i = 0; i <= 10; i++) {
-      fhirs.add(podam.manufacturePojo(FHIREvent.class));
+    for (int i = 0; i <= 2; i++) {
+      FHIREvent fhirEvent = podam.manufacturePojo(FHIREvent.class);
+      fhirEvent.setType("FHIR");
+      fhirs.add(fhirEvent);
     }
     String json = gson.toJson(fhirs);
     log.info(String.format("#### -> Sending FHIR order event message -> %s", json));
@@ -39,12 +41,14 @@ public class EventProducer {
   }
 
   public void sendAdverseevent() {
-    List<Adverseevent> adverseevent = new ArrayList<>();
-    for (int i = 0; i <= 10; i++) {
-      adverseevent.add(podam.manufacturePojo(Adverseevent.class));
+    List<Adverseevent> adverseevents = new ArrayList<>();
+    for (int i = 0; i <= 2; i++) {
+      Adverseevent adverseevent = podam.manufacturePojo(Adverseevent.class);
+      adverseevent.setType("Adverseevent");
+      adverseevents.add(adverseevent);
     }
-    String json = gson.toJson(adverseevent);
-    log.info(String.format("#### -> Sending Adverseevent event message -> %s", json));
+    String json = gson.toJson(adverseevents);
+    log.info("#### -> Sending Adverseevent event message ->");
     kafkaTemplate.send(TOPIC, json);
   }
 

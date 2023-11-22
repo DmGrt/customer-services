@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Interchange {
+  public String type;
+
   @JsonProperty("UNB_01_SyntaxIdentifier")
   public UNB01SyntaxIdentifier uNB_01_SyntaxIdentifier;
 
